@@ -3,7 +3,7 @@
 namespace App\Module\Controller;
 
 use App\Module\Service\Service;
-
+use App\Core\Exceptions\ValidationException;
 class Controller {
     private Service $service;
 
@@ -17,8 +17,11 @@ class Controller {
     public function test($id): void{
         try{
             $this->service->test($id);
-        } catch(\Exception $e){
+        } catch(ValidationException $e){
+            echo "controller验证错误！\n";
             echo $e->getMessage();
+            echo $e->getCode();
+            echo json_encode($e->getErrors());
         }
     }
 }

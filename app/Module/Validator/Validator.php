@@ -1,17 +1,16 @@
 <?php
 
 namespace App\Module\Validator;
-
+use App\Core\Exceptions\ValidationException;
 class Validator {
-    public function validate($id): void {
-        $errors = [];
-       
-        if(!is_int($id)) {
-            $errors['id'] = "id必须为数字";
+    public static function validate($id): void{
+        $error = [];
+        if(!is_int($id)){
+            $error["id"] = "id必须为数字哦!!!";
         }
-        
-        if(!empty($errors)) {
-            throw new \Exception("". implode(", ", $errors));
+
+        if(!empty($error)){
+            throw new ValidationException($error,"wawd",400);
         }
     }
 }

@@ -16,7 +16,7 @@ class Index
         $container = new \App\Core\Container();
         
         $controller = $container->make(\App\Module\Controller\Controller::class);
-        call_user_func_array([$controller,'test'], ['adwad']);
+        call_user_func_array([$controller,'test'], ['12343']);
     }
 }
 
