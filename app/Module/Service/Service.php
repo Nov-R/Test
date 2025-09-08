@@ -13,7 +13,7 @@ class Service{
             Validator::validate($id);
             echo "编号为{$id}";
         } catch (ValidationException $e) {
-            echo "service验证错误！\n";
+            echo "service异常处理中...\n";
             throw $e;
         }
     }

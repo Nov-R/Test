@@ -5,7 +5,7 @@ use Throwable;
 class ValidationException extends Exception {
     private array $errors;
 
-    public function __construct(array $errors, string $message="默认异常", int $code=200, Throwable $previous = null) {
+    public function __construct(array $errors, string $message="验证异常", int $code=200, Throwable $previous = null) {
         parent::__construct($message, $code, $previous);
         $this->errors = $errors;
     }

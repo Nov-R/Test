@@ -18,10 +18,10 @@ class Controller {
         try{
             $this->service->test($id);
         } catch(ValidationException $e){
-            echo "controller验证错误！\n";
+            echo "controller异常处理中....";
             echo $e->getMessage();
             echo $e->getCode();
-            echo json_encode($e->getErrors());
+            echo json_encode($e->getErrors(), JSON_UNESCAPED_UNICODE);
         }
     }
 }

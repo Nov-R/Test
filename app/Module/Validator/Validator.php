@@ -10,7 +10,7 @@ class Validator {
         }
 
         if(!empty($error)){
-            throw new ValidationException($error,"wawd",400);
+            throw new ValidationException($error);
         }
     }
 }
