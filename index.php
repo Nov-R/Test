@@ -20,10 +20,5 @@ class Index
     }
 }
 
-
-
-
 $index = new Index();
 $index->test();
-
-
